@@ -66,10 +66,13 @@ namespace WebApi.Controllers
         {
             if (Cache.Exists(id.ToString()))
             {
-                var user = new ObjectResult((User)Cache.Get(id.ToString()));
-                ((User)user.Value).Points = points;
-                Cache.Update(id.ToString(), user.Value);
-                return Ok();
+                lock (thisLock)
+                {
+                    var user = new ObjectResult((User)Cache.Get(id.ToString()));
+                    ((User)user.Value).Points = points;
+                    Cache.Update(id.ToString(), user.Value);
+                    return Ok();
+                }
             }
             return NotFound();
         }

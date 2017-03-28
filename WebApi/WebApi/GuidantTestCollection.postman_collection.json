@@ -1,0 +1,64 @@
+{
+	"variables": [],
+	"info": {
+		"name": "GuidantTestCollection",
+		"_postman_id": "2a525404-de2c-ff37-aab1-7cfa1a50d92c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetUsers",
+			"request": {
+				"url": "http://localhost:11996/api/Users",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add User",
+			"request": {
+				"url": "http://localhost:11996/api/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Name\": \"Devin\",\r\n  \"Points\": 2500\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Information",
+			"request": {
+				"url": "http://localhost:11996/api/Users/2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Points",
+			"request": {
+				"url": "http://localhost:11996/api/users/1/1056",
+				"method": "PATCH",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
